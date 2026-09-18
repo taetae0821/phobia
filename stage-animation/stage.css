@@ -1,0 +1,78 @@
+body {
+  width: 99%;
+  height: 100%;
+  margin: 0;
+  background-color: black;
+  overflow: hidden;
+}
+
+.opening {
+  width: 99vw;
+  height: 99vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.close {
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.black-ops-one-regular {
+  font-family: "Black Ops One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+  line-height: 50px;
+}
+
+#first {
+  opacity: 0;
+  margin-top: 15%;
+  font-size: 1200%;
+
+  align-items: center;
+  justify-self: center;
+}
+.first {
+  animation: fade-in 0.25s forwards;
+}
+
+#second {
+  opacity: 0;
+  font-size: 600%;
+
+  align-items: center;
+  justify-self: center;
+}
+.second {
+  animation: fade-in 0.25s forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.start {
+  animation: starting 0.2s forwards;
+}
+
+@keyframes starting {
+  0%,
+  100% {
+    transform: skew(100deg);
+  }
+  40%,
+  60% {
+    transform: skew(-500deg);
+  }
+  50% {
+    transform: skew(1000deg);
+  }
+}

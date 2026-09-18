@@ -1,0 +1,67 @@
+.selected-left {
+  animation: lefts 0.7s forwards;
+}
+.selected-middle {
+  animation: middles 0.7s forwards;
+}
+.selected-right {
+  animation: rights 0.7s forwards;
+}
+@keyframes lefts {
+  0% {
+    transform: translate(0%, 0%);
+  }
+  100% {
+    transform: translate(-80%, -40%);
+  }
+}
+@keyframes middles {
+  0% {
+    transform: translate(0%, 0%);
+  }
+  100% {
+    transform: translate(-180%, -40%);
+  }
+}
+@keyframes rights {
+  0% {
+    transform: translate(0%, 0%);
+  }
+  100% {
+    transform: translate(-280%, -40%);
+  }
+}
+
+.back-left {
+  animation: lefts-back 0.7s forwards;
+}
+.back-middle {
+  animation: middles-back 0.7s forwards;
+}
+.back-right {
+  animation: rights-back 0.7s forwards;
+}
+@keyframes lefts-back {
+  0% {
+    transform: translate(-80%, -40%);
+  }
+  100% {
+    transform: translate(0%, 0%);
+  }
+}
+@keyframes middles-back {
+  0% {
+    transform: translate(-180%, -40%);
+  }
+  100% {
+    transform: translate(0%, 0%);
+  }
+}
+@keyframes rights-back {
+  0% {
+    transform: translate(-280%, -40%);
+  }
+  100% {
+    transform: translate(0%, 0%);
+  }
+}

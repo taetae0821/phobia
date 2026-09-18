@@ -1,0 +1,152 @@
+#poster {
+  opacity: 0;
+  margin-top: -37%;
+  margin-bottom: -10%;
+  margin-left: 50%;
+  scale: 0%;
+}
+
+.post-in {
+  animation: file-request 0.4s forwards;
+}
+.post-out {
+  animation: file-out 0.4s forwards;
+}
+
+.post-stay {
+  animation: file-noise 1ms infinite;
+}
+
+@keyframes file-request {
+  0% {
+    opacity: 0;
+    transform: translate(-300%, 100%) rotate(-10deg);
+    scale: 60%;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-68%, -13%) rotate(11deg);
+    scale: 109%;
+  }
+}
+
+@keyframes file-out {
+  0% {
+    opacity: 1;
+    transform: translate(-68%, -13%) rotate(11deg);
+    scale: 109%;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-300%, 100%) rotate(-10deg);
+    scale: 60%;
+  }
+}
+
+@keyframes file-noise {
+  0% {
+    transform: skew(0deg) translate(-68%, -13%) rotate(11deg);
+    opacity: 0.8;
+    scale: 109%;
+  }
+  10% {
+    opacity: 0.9;
+  }
+  20% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0.8;
+  }
+  40% {
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0.8;
+  }
+  70% {
+    opacity: 0.9;
+  }
+  80% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0.8;
+    transform: skew(0deg) translate(-68%, -13%) rotate(11deg);
+  }
+  98% {
+    transform: skew(2deg) translate(-68%, -13%) rotate(11deg);
+  }
+  100% {
+    transform: skew(-200deg) translate(-68%, -13%) rotate(11deg);
+    opacity: 0.9;
+    scale: 109%;
+  }
+}
+
+#buttons {
+  opacity: 0;
+  position: flex;
+  transform: translate(3%, -280%);
+  font-size: 0%;
+  line-height: 30px;
+  color: "#004aad";
+}
+
+.btn-in {
+  animation: btn-in 0.3s forwards;
+}
+
+@keyframes btn-in {
+  0% {
+    opacity: 0;
+    font-size: 650%;
+    transform: translate(3%, -320%);
+  }
+  100% {
+    opacity: 1;
+    font-size: 650%;
+    transform: translate(3%, -320%);
+  }
+}
+.btn-out {
+  animation: btn-out 0.3s forwards;
+}
+
+@keyframes btn-out {
+  0% {
+    opacity: 1;
+    font-size: 650%;
+    transform: translate(3%, -320%);
+  }
+  100% {
+    opacity: 0;
+    font-size: 650%;
+    transform: translate(3%, -320%);
+  }
+}
+
+.start-game {
+  animation: start-fade 0.5s forwards;
+}
+
+@keyframes start-fade {
+  0% {
+    transform: skew(1100deg);
+  }
+  25% {
+    opacity: 1;
+    transform: skew(-2080deg);
+  }
+  50% {
+    opacity: 0.7;
+    transform: skew(500deg);
+  }
+  100% {
+    opacity: 0;
+    transform: skew(0deg);
+  }
+}

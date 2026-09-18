@@ -1,0 +1,228 @@
+body {
+  background-color: black;
+  width: 99%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#main-text {
+  position: relative;
+  z-index: -300;
+  margin-left: 20px;
+  margin-bottom: -8%;
+  font-size: 1200%;
+  animation: wiggle 1ms infinite;
+}
+
+#sub-text {
+  position: relative;
+  z-index: -300;
+  margin-left: 40px;
+  font-size: 500%;
+  animation: noise-button 1ms infinite;
+}
+
+#playable-button {
+  display: inline;
+  margin-bottom: -2%;
+  margin-left: 30px;
+  font-size: 300%;
+  margin-right: 0%;
+  z-index: 999;
+  animation: noise-button 1s infinite;
+}
+
+#playable-button:active {
+  animation: fade-out 1s forwards;
+}
+
+#playable-button:hover {
+  animation: glitch 1ms infinite;
+}
+
+.black-ops-one-regular {
+  font-family: "Black Ops One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+}
+
+.glitch-text {
+  font-size: 2rem;
+  margin-bottom: 5rem;
+  color: white;
+}
+
+@keyframes wiggle {
+  0% {
+    transform: skew(0deg);
+    opacity: 0.6;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  20% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0.6;
+  }
+  40% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0.6;
+  }
+  70% {
+    opacity: 0.7;
+  }
+  80% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  98% {
+    transform: skew(2deg);
+  }
+  100% {
+    transform: skew(-200deg);
+    opacity: 0.7;
+  }
+}
+
+#ghost {
+  margin: auto;
+  display: block;
+  position: absolute;
+  margin-top: 0%;
+  margin-left: 50%;
+  scale: 240%;
+  animation: ghost 10s infinite;
+}
+
+@keyframes ghost {
+  0% {
+    opacity: 0;
+  }
+  97% {
+    opacity: 0;
+
+    transform: skew(0deg);
+  }
+  98.5% {
+    transform: skew(00deg);
+  }
+  99% {
+    transform: skew(30deg);
+  }
+  100% {
+    opacity: 0.5;
+    transform: skew(-100deg);
+  }
+}
+
+@keyframes glitch {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#noise {
+  position: absolute;
+  z-index: -400;
+  top: 0px;
+  width: 98vw;
+  height: 98vh;
+  object-fit: cover;
+  animation: noise 0.1s infinite;
+}
+
+@keyframes noise {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
+
+@keyframes noise-button {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.2;
+  }
+  76% {
+    transform: skew(-255deg);
+    opacity: 00;
+  }
+  77% {
+    transform: skew(255deg);
+    opacity: 0;
+  }
+  100% {
+    transform: skew(0deg);
+    opacity: 0;
+  }
+}
+
+.fade {
+  animation: fade-out 1s forwards;
+}
+
+#selectPage {
+  opacity: 0;
+}
+
+.select {
+  animation: select 1s forwards;
+}
+.selected {
+  animation: selected 1s forwards;
+}
+
+@keyframes select {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes selected {
+  0% {
+    transform: translateY(300px);
+    scale: 40%;
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0px);
+    scale: 40%;
+    opacity: 1;
+  }
+}

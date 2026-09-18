@@ -1,0 +1,161 @@
+#mainTag {
+  text-align: center;
+  font-size: 400%;
+}
+
+.stages {
+  opacity: 0;
+  display: flex;
+  margin-top: -40%;
+  margin-bottom: -10%;
+  margin-right: 40%;
+  scale: 0%;
+}
+
+.stages-right {
+  animation: right 2s forwards;
+}
+
+.stages-left {
+  animation: left 2s forwards;
+}
+
+.stage-left {
+  transform: translateX(-80px);
+}
+
+.stage-right {
+  transform: translateX(80px);
+}
+
+#stage-1:hover {
+  animation: zoom-in 0.4s forwards;
+}
+
+#stage-2:hover {
+  animation: zoom-in 0.4s forwards;
+}
+
+#stage-3:hover {
+  animation: zoom-in 0.4s forwards;
+}
+
+@keyframes right {
+  0% {
+    transform: translateX(-300px);
+  }
+  100% {
+    transform: translateX(-80px);
+  }
+}
+
+@keyframes left {
+  0% {
+    transform: translateX(300px);
+  }
+  100% {
+    transform: translateX(80px);
+  }
+}
+
+@keyframes zoom-in {
+  0% {
+    scale: 100%;
+  }
+  100% {
+    scale: 110%;
+  }
+}
+
+.hide {
+  animation: hiding 0.4s forwards;
+}
+.hide-left {
+  animation: hiding-left 0.4s forwards;
+}
+
+@keyframes hiding {
+  0% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  99% {
+    transform: translateX(50%);
+    opacity: 0;
+    scale: 100%;
+  }
+  100% {
+    scale: 0%;
+  }
+}
+@keyframes hiding-left {
+  0% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  99% {
+    transform: translateX(-50%);
+    opacity: 0;
+    scale: 100%;
+  }
+  100% {
+    scale: 0%;
+  }
+}
+
+.showing {
+  animation: showing 0.4s forwards;
+}
+.showing-left {
+  animation: showing-left 0.4s forwards;
+}
+
+@keyframes showing {
+  0% {
+    transform: translateX(50%);
+    opacity: 0;
+    scale: 100%;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+    scale: 100%;
+  }
+}
+@keyframes showing-left {
+  0% {
+    transform: translateX(-50%);
+    opacity: 0;
+    scale: 100%;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+    scale: 100%;
+  }
+}
+.hide-text {
+  animation: hide-text 0.4s forwards;
+}
+
+@keyframes hide-text {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.show-text {
+  animation: show-text 0.4s forwards;
+}
+
+@keyframes show-text {
+  0% {
+    opacity: 2;
+  }
+  100% {
+    opacity: 1;
+  }
+}

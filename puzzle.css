@@ -1,0 +1,46 @@
+        .lock {
+            width: 20px;
+            height: 20px;
+            background-color: blue;
+            cursor: pointer;
+        }
+
+        .blur-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(6px);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease;
+            z-index: 10;
+        }
+
+        .blur-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .test {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.95);
+            width: min(400px, 90vw);
+            max-height: 80vh;
+            overflow: auto;
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease, transform 0.25s ease;
+            z-index: 20;
+        }
+
+        .test.active {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+            pointer-events: auto;
+        }

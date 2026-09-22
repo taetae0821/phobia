@@ -1,0 +1,76 @@
+body{
+    margin: 0;
+    background-color: black;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+#bg {
+    
+}
+
+#table_test {
+    position: absolute;
+    scale: 75%;
+    transform: skew(-25deg);
+    margin-top: 17%;
+    rotate: 10deg;
+}
+
+#map {
+    position: absolute;
+    scale: 0;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+#table_test:hover{
+    animation: zoom-in 0.2s forwards;
+}
+
+@keyframes zoom-in {
+    0%{
+        scale: 75%;
+    }
+    100%{
+        scale:80%
+    }
+}
+
+.upScale{
+    animation: upScale 0.4s forwards
+}
+
+@keyframes upScale {
+    0%{
+    transform: translateX(-50%) translateY(-50%);
+        opacity: 0;
+        scale: 0;
+    }
+    100%{
+    transform: translateX(-30%) translateY(-30%);
+        opacity: 1;
+        scale: 180%;
+    }
+}
+
+.downScale{
+    animation: downScale 0.4s forwards;
+}
+
+@keyframes downScale {
+    0%{
+    transform: translateX(-30%) translateY(-30%);
+        opacity: 1;
+        scale: 180%;
+    }
+    100%{
+    transform: translateX(-50%) translateY(-50%);
+        opacity: 0;
+        scale: 0;
+    }
+}

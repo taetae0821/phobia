@@ -145,6 +145,6 @@ btn_in.addEventListener("click", function () {
     et.classList.add("start-game");
   }, 200);
   setTimeout(() => {
-    window.location.href = "../stage-animation/stage1_nyctophobia.html";
+    window.location.href = "/stage-animation/stage1_nyctophobia.html";
   }, 800);
 });

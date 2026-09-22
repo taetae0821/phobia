@@ -7,6 +7,6 @@ stair.addEventListener("click", () => {
     black.classList.add("fade-animation-in");
   }, 200);
   setTimeout(() => {
-    window.location.href = "/phobia/stages/map/pined.html";
+    window.location.href = "/stages/map/pined.html";
   }, 1200);
 });

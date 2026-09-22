@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="puzzle.css">
+    <title>puzzle</title>
+
+</head>
+<body>
+    <div class="lock" onclick="openPanel()">
+        <div class="time" id="time"></div>
+    </div>
+    
+    <div class="test" id="test"></div>
+    <div class="blur-overlay" id="blurOverlay" onclick="closePanel()"></div>
+    <script>
+        function openPanel() {
+            document.getElementById('test').classList.add('active');
+            document.getElementById('blurOverlay').classList.add('active');
+            console.log("열림");
+                fetch('timing.html')
+                .then(response => response.text())
+                .then(data => {
+                document.getElementById('test').innerHTML = data;
+                })
+                .catch(error => console.error('Error:', error));
+        }
+        function closePanel() {
+            document.getElementById('test').classList.remove('active');
+            document.getElementById('blurOverlay').classList.remove('active');
+            console.log("닫힘");
+        }
+    </script>
+    <script>
+        let timerId = false;
+        function start(){
+            if (timerId !== false) return;
+            timerId = setInterval(time, 1000);
+        }
+        let count = 0;
+        function time(){
+            console.log(count);
+            count = String(count).padStart(2, '0');
+            document.getElementById('clock').textContent = `00:${count}`;
+            count++;
+
+        }
+        function stop(){
+            clearInterval(timerId);
+            timerId = true;
+            if(count===5){
+                clock.style.color = "green";
+            }else{
+                clock.style.color = "red";
+            }
+            console.log(typeof(count));
+        }
+        
+        
+    </script>
+</body>
+</html>

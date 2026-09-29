@@ -39,14 +39,16 @@
             timerId = setInterval(time, 1000);
         }
         let count = 0;
-        function time(){
-            console.log(count);
-            count = String(count).padStart(2, '0');
-            document.getElementById('clock').textContent = `00:${count}`;
-            count++;
 
+        function time(){
+            count++;
+            document.getElementById('clock').textContent = `00:${String(count).padStart(2, '0')}`;
         }
+
         function stop(){
+            const element = document.getElementById('clock');
+            element.classList.remove('clock');
+            element.classList.add('show');
             clearInterval(timerId);
             timerId = true;
             if(count===5){

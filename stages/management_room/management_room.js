@@ -25,5 +25,5 @@ document.addEventListener('click', ()=>{
 
 left_map.addEventListener('click', () => {
     count++;
-    window.location.href = "/stages/map/pined.html"
+    window.location.href = "/stages/map/pined.html?unlocked=1"
 })

@@ -74,3 +74,10 @@ body{
         scale: 0;
     }
 }
+
+#left_map{
+    position: absolute;
+    top: 75%;
+    left: 40%;
+    scale: 40%;
+}

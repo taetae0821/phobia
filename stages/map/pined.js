@@ -1,3 +1,4 @@
+import {open} from '..stage1.js'
 
 const left_map = document.getElementById("left_map")
 
@@ -13,6 +14,11 @@ function closePanel() {
 }
     $(document).ready(function() {
         $('#keypad').keypad();
+
+        if (new URLSearchParams(location.search).get('unlocked') === '1') {
+            document.querySelector(".lock").style.display = "none";
+            $('.door').addClass('unlocked');
+        }
 
         $('.door').on('click', function() {
             if (!$(this).hasClass('unlocked')) return;

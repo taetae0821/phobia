@@ -27,4 +27,8 @@ door.addEventListener("click", () => {
   }, 1200);
 });
 
+<<<<<<< HEAD
 // export { open };
+=======
+export {open};
+>>>>>>> fb24119a1e8971e49d7ba7accbcbb377e49e6a07

@@ -10,3 +10,4 @@ stair.addEventListener("click", () => {
     window.location.href = "/stages/map/pined.html";
   }, 1200);
 });
+  

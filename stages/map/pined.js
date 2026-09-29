@@ -1,3 +1,4 @@
+
 function openPanel() {
     document.getElementById('panel').classList.add('active');
     document.getElementById('blurOverlay').classList.add('active');
@@ -11,6 +12,11 @@ function closePanel() {
     $(document).ready(function() {
         $('#keypad').keypad();
 
+        $('.door').on('click', function() {
+            if (!$(this).hasClass('unlocked')) return;
+            window.location.href = "../management_room/management_room.html";
+        });
+
         $('#numInput').on('change', function() {
             var value = $(this).val();
 
@@ -22,8 +28,7 @@ function closePanel() {
             if (value === "0714") {
                 $(this).css({ color: 'green', 'border-color': 'green' });
                 document.querySelector(".lock").style.display = "none";
-                console.log("실행");
-                
+                $('.door').addClass('unlocked');
             } else {
                 $(this).css({ color: 'red', 'border-color': 'red' });
             }

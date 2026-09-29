@@ -25,6 +25,10 @@
             align-items: center;
         }
 
+        .door.unlocked {
+            cursor: pointer;
+        }
+
         .handle {
             display: flex;
             flex-direction: column;

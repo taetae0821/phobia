@@ -1,3 +1,4 @@
+import {open} from '..stage1.js'
 
 const left_map = document.getElementById("left_map")
 

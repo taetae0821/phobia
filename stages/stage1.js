@@ -9,7 +9,10 @@ stair.addEventListener("click", () => {
     black.classList.add("fade-animation-in");
   }, 200);
   setTimeout(() => {
-    window.location.href = "/stages/map/pined.html";
+    if(open==true){
+    window.location.href = "/stages/map/pined.html?unlocked=1";}
+    else{
+    window.location.href = "/stages/map/pined.html";}
   }, 1200);
 });
 
@@ -21,3 +24,5 @@ door.addEventListener("click", () => {
     window.location.href = "/stages/trash_room/trash_room.html";
   }, 1200);
 });
+
+export let open = false;

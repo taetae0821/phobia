@@ -4,6 +4,8 @@ const stair = document.getElementById("stair");
 
 const door = document.getElementById("door");
 
+let open = false;
+
 stair.addEventListener("click", () => {
   setTimeout(() => {
     black.classList.add("fade-animation-in");
@@ -25,4 +27,4 @@ door.addEventListener("click", () => {
   }, 1200);
 });
 
-export let open = false;
+export {open};

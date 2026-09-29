@@ -1,3 +1,5 @@
+// import {open} from "./map/pined.mjs";
+
 const black = document.getElementById("fade");
 
 const stair = document.getElementById("stair");
@@ -26,9 +28,3 @@ door.addEventListener("click", () => {
     window.location.href = "/stages/trash_room/trash_room.html";
   }, 1200);
 });
-
-<<<<<<< HEAD
-// export { open };
-=======
-export {open};
->>>>>>> fb24119a1e8971e49d7ba7accbcbb377e49e6a07

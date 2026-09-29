@@ -1,6 +1,8 @@
-import {open} from '..stage1.js'
+
 
 const left_map = document.getElementById("left_map")
+
+// export let open = false;
 
 function openPanel() {
     document.getElementById('panel').classList.add('active');
@@ -18,6 +20,7 @@ function closePanel() {
         if (new URLSearchParams(location.search).get('unlocked') === '1') {
             document.querySelector(".lock").style.display = "none";
             $('.door').addClass('unlocked');
+            // open = true;
         }
 
         $('.door').on('click', function() {

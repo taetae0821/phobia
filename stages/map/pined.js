@@ -12,6 +12,11 @@ function closePanel() {
     $(document).ready(function() {
         $('#keypad').keypad();
 
+        if (new URLSearchParams(location.search).get('unlocked') === '1') {
+            document.querySelector(".lock").style.display = "none";
+            $('.door').addClass('unlocked');
+        }
+
         $('.door').on('click', function() {
             if (!$(this).hasClass('unlocked')) return;
             window.location.href = "../management_room/management_room.html";

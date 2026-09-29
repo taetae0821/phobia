@@ -13,7 +13,7 @@ stair.addEventListener("click", () => {
   setTimeout(() => {
     if(open==true){
     window.location.href = "/stages/map/pined.html?unlocked=1";}
-    else{
+    else if(open==false){
     window.location.href = "/stages/map/pined.html";}
   }, 1200);
 });
@@ -27,4 +27,4 @@ door.addEventListener("click", () => {
   }, 1200);
 });
 
-export { open };
+// export { open };

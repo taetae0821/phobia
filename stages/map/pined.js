@@ -1,4 +1,6 @@
 
+const left_map = document.getElementById("left_map")
+
 function openPanel() {
     document.getElementById('panel').classList.add('active');
     document.getElementById('blurOverlay').classList.add('active');
@@ -85,3 +87,10 @@ function closePanel() {
             $.fn[pluginName].defaults = defaults;
         })('keypad');
     })(jQuery);
+
+
+
+
+left_map.addEventListener('click', () => {
+    window.location.href = "/stages/stage1_lobby.html"
+})

@@ -55,3 +55,10 @@ body {
     opacity: 1;
   }
 }
+
+#door {
+  position: absolute;
+  scale: 75%;
+  left:80%;
+  top: 30%;
+}

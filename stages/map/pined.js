@@ -1,4 +1,4 @@
-
+const black = document.getElementById("fade")
 
 const left_map = document.getElementById("left_map")
 
@@ -25,7 +25,12 @@ function closePanel() {
 
         $('.door').on('click', function() {
             if (!$(this).hasClass('unlocked')) return;
+            setTimeout(() => {
+                black.classList.add("fade-animation-in");
+            }, 200);
+            setTimeout(() => {
             window.location.href = "../management_room/management_room.html";
+            }, 600);
         });
 
         $('#numInput').on('change', function() {
@@ -96,5 +101,10 @@ function closePanel() {
 
 
 left_map.addEventListener('click', () => {
-    window.location.href = "/stages/stage1_lobby.html"
+    setTimeout(() => {
+        black.classList.add("fade-animation-in");
+    }, 200);
+    setTimeout(() => {
+        window.location.href = "/stages/stage1_lobby.html"
+    }, 600);
 })

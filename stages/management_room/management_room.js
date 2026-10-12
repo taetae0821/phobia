@@ -2,6 +2,7 @@ const map = document.getElementById("map")
 const table = document.getElementById("table_test")
 
 const left_map = document.getElementById("left_map")
+const black = document.getElementById("fade")
 
 let count = 0;
 
@@ -24,6 +25,11 @@ document.addEventListener('click', ()=>{
 })
 
 left_map.addEventListener('click', () => {
+  setTimeout(() => {
+    black.classList.add("fade-animation-in");
+  }, 200);
     count++;
+    setTimeout(() => {
     window.location.href = "/stages/map/pined.html?unlocked=1"
+    }, 600);
 })

@@ -6,6 +6,8 @@ const stair = document.getElementById("stair");
 
 const door = document.getElementById("door");
 
+const next_screen = document.getElementById("next_screen");
+
 let open = false;
 
 stair.addEventListener("click", () => {
@@ -27,4 +29,14 @@ door.addEventListener("click", () => {
   setTimeout(() => {
     window.location.href = "/stages/trash_room/trash_room.html";
   }, 1200);
+});
+
+next_screen.addEventListener("click", () => {
+  setTimeout(() => {
+    black.classList.add("fade-animation-in");
+  }, 200);
+  setTimeout(() => {
+    window.location.href = "/stages/road/road.html";
+  }
+, 1200);
 });

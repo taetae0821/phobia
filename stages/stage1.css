@@ -14,6 +14,7 @@ body {
 #stair {
   position: absolute;
   scale: 75%;
+  cursor: pointer;
 }
 
 #fade {
@@ -61,4 +62,29 @@ body {
   scale: 75%;
   left:80%;
   top: 30%;
+  cursor: pointer;
+}
+
+#next_screen {
+  position: absolute;
+  scale: 55%;
+  left:56%;
+  top: 25%;
+}
+
+#next_screen:hover {
+  cursor: pointer;
+  animation: hover 1.4s infinite ;
+}
+
+@keyframes hover {
+  0% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.4;
+  }
 }

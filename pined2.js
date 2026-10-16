@@ -5,7 +5,7 @@ function Having(){
         $('.image').hide();
         $('.lock').addClass('show');
     }else{
-        alert("열쇠가 없습니다");
+        alert("잠겨있는거 같다...");
     }
 }
 

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>pinpad2</title>
+    <link rel="stylesheet" type="text/css" href="pined2.css">
+</head>
+<body>
+
+<div class="container">
+  <div class="door">
+    <div class="handle">
+      <img src="./lock.png" class="image" alt="lock" onclick="Having()">
+      <div class="lock" onclick="openPanel()"></div>
+      <div class="circle"></div>
+    </div>
+  </div>
+</div>
+
+<div class="blur-overlay" id="blurOverlay" onclick="closePanel()"></div>
+
+<div class="panel" id="panel">
+  <h2 style="margin: 0;">비밀번호를 입력하세요</h2>
+  <input type="text" class="keypad" id="numInput" disabled="disabled" />
+  <div id="keypad"></div>
+</div>
+
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="jquery.keypad.js"></script>
+<script type="text/javascript" src="pined2.js"></script>
+</body>
+</html>

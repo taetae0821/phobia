@@ -1,6 +1,5 @@
-const black = document.getElementById("fade")
-
-const left_map = document.getElementById("left_map")
+const left_map = document.getElementById("left_map");
+let open = false;
 
 // export let open = false;
 
@@ -20,17 +19,12 @@ function closePanel() {
         if (new URLSearchParams(location.search).get('unlocked') === '1') {
             document.querySelector(".lock").style.display = "none";
             $('.door').addClass('unlocked');
-            // open = true;
+            open = true;
         }
 
         $('.door').on('click', function() {
             if (!$(this).hasClass('unlocked')) return;
-            setTimeout(() => {
-                black.classList.add("fade-animation-in");
-            }, 200);
-            setTimeout(() => {
             window.location.href = "../management_room/management_room.html";
-            }, 600);
         });
 
         $('#numInput').on('change', function() {
@@ -45,6 +39,7 @@ function closePanel() {
                 $(this).css({ color: 'green', 'border-color': 'green' });
                 document.querySelector(".lock").style.display = "none";
                 $('.door').addClass('unlocked');
+                open = true;
             } else {
                 $(this).css({ color: 'red', 'border-color': 'red' });
             }
@@ -101,10 +96,5 @@ function closePanel() {
 
 
 left_map.addEventListener('click', () => {
-    setTimeout(() => {
-        black.classList.add("fade-animation-in");
-    }, 200);
-    setTimeout(() => {
-        window.location.href = "/stages/stage1_lobby.html"
-    }, 600);
+    window.location.href = open ? "/stages/stage1_lobby.html?unlocked=1" : "/stages/stage1_lobby.html";
 })

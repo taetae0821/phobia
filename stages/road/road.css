@@ -53,3 +53,52 @@ body {
     opacity: 1;
   }
 }
+
+#cup{
+    position: absolute;
+    top: 20%;
+    scale: 20%;
+    left: 10%;
+}
+
+#memo{
+    position: absolute;
+    top: 50%;
+    left: 83%;
+    scale: 40%;
+}
+
+#cup_zoom,#memo_zoom{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    scale: 0%;
+}
+
+.cup-in{
+    animation: cup-in 0.5s forwards;
+}
+
+.memo-in{
+    animation: memo-in 0.5s forwards;
+}
+
+@keyframes cup-in {
+    0% {
+        scale: 0%;
+    }
+    100% {
+        scale: 240%;
+        translate : -50% -50%;
+    }
+}
+
+@keyframes memo-in {
+    0% {
+        scale: 0%;
+    }
+    100% {
+        scale: 570%;
+        translate : -50% -50%;
+    }
+}

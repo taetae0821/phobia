@@ -40,3 +40,15 @@ next_screen.addEventListener("click", () => {
   }
 , 1200);
 });
+
+
+const outdoor = document.getElementById("outdoor");
+
+outdoor.addEventListener("click", () => {
+  setTimeout(() => {
+    black.classList.add("fade-animation-in");
+  }, 200);
+  setTimeout(() => {
+    window.location.href = "../pined2.html";
+  }, 1200);
+  });

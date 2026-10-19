@@ -88,3 +88,14 @@ body {
     opacity: 0.4;
   }
 }
+
+
+
+#outdoor{
+    position: absolute;
+    top: 93%;
+    left: 45%;
+    width: 10%;
+    height: 5%;
+    opacity: 1;
+}

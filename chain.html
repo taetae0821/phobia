@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>pinpad2</title>
+    <link rel="stylesheet" type="text/css" href="chain.css">
+</head>
+<body>
+
+<div class="container">
+  <div class="door">
+    <div class="handle">
+      <div class="circle" onclick="Click()"></div>
+    </div>
+    <div class="chain-wrap">
+      <span class="chain-link"></span>
+      <span class="chain-link"></span>
+      <span class="chain-link"></span>
+      <span class="chain-link"></span>
+      <span class="chain-link"></span>
+      <span class="chain-link"></span>
+      <span class="chain-link"></span>
+      <span class="chain-link"></span>
+      <span class="chain-link"></span>
+    </div>
+    <div class="chain-wrap chain-wrap-cross" >
+      <span class="chain-link"></span>
+      <span class="chain-link"></span>
+      <span class="chain-link"></span>
+      <span class="chain-link"></span>
+      <span class="chain-link"></span>
+      <span class="chain-link"></span>
+      <span class="chain-link"></span>
+      <span class="chain-link"></span>
+      <span class="chain-link"></span>
+    </div>
+  </div>
+</div>
+<script>
+    let count = 0;
+    let N = Math.floor(Math.random() * 20) + 1;
+    let isUnlocked = false;
+    console.log(N);
+    function Click(){
+        if(isUnlocked){
+            return;
+        }
+
+        count++;
+        console.log(count);
+        if(count >= N){
+            isUnlocked = true;
+            document.querySelector('.circle').classList.add('disabled');
+            document.querySelectorAll('.chain-wrap').forEach(function(chain) {
+                chain.classList.add('hidden');
+            });
+
+        }
+    }
+</script>
+</body>
+</html>

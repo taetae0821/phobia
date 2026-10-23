@@ -151,3 +151,7 @@
     left: 40%;
     scale: 40%;
 }
+
+#left_map:hover {
+  cursor: pointer;
+}

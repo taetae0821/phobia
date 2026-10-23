@@ -96,3 +96,16 @@ function closePanel() {
             $.fn[pluginName].defaults = defaults;
         })('keypad');
     })(jQuery);
+
+
+    const left_map = document.getElementById('left_map')
+
+
+left_map.addEventListener('click', () => {
+  setTimeout(() => {
+    black.classList.add("fade-animation-in");
+  }, 200);
+    setTimeout(() => {
+    window.location.href = "/stages/stage1_lobby.html"
+    }, 600);
+})

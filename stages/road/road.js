@@ -69,3 +69,13 @@ document.addEventListener('click', ()=>{
     }
 })
 
+const floor = getElementById("floor");
+
+floor.addEventListener('click',()=>{
+  setTimeout(() => {
+    black.classList.add("fade-animation-in");
+  }, 200);
+    setTimeout(() => {
+    window.location.href = "/stages/stage1_lobby.html"
+    }, 600);
+})

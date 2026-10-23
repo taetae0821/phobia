@@ -54,3 +54,9 @@ body {
     opacity: 1;
   }
 }
+
+
+
+#left_map:hover {
+  cursor: pointer;
+}

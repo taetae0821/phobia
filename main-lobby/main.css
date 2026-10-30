@@ -22,7 +22,7 @@ body {
   animation: noise-button 1ms infinite;
 }
 
-#playable-button {
+#playable-button,#setting-button {
   display: inline;
   margin-bottom: -2%;
   margin-left: 30px;
@@ -32,11 +32,11 @@ body {
   animation: noise-button 1s infinite;
 }
 
-#playable-button:active {
+#playable-button:active,#setting-button:active {
   animation: fade-out 1s forwards;
 }
 
-#playable-button:hover {
+#playable-button:hover,#setting-button:hover {
   animation: glitch 1ms infinite;
 }
 

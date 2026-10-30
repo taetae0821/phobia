@@ -52,6 +52,15 @@ play_click.addEventListener("click", function () {
   }, 2110);
 });
 
+
+const setting = document.getElementById("setting-button")
+
+setting.addEventListener("click",()=>{
+  
+})
+
+
+
 rightImage.addEventListener("click", function () {
   console.log("1번째 스테이지 로드 완료");
   leftImage.classList.remove("stage-right");

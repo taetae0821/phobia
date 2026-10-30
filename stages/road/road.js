@@ -77,6 +77,6 @@ floor.addEventListener('click',()=>{
     black.classList.add("fade-animation-in");
   }, 200);
     setTimeout(() => {
-    window.location.href = "/stages/chain.html"
+    window.location.href = "/chain.html"
     }, 600);
 })

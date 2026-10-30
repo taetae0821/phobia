@@ -7,9 +7,11 @@
 <body>
 
 <div class="container">
-  <div class="door">
-    <div class="handle">
-      <div class="circle" onclick="Click()"></div>
+  <div class="door" onclick="OpenDoor()">
+    <div class="door-panel">
+      <div class="handle">
+        <div class="circle" onclick="Click(event)"></div>
+      </div>
     </div>
     <div class="chain-wrap">
       <span class="chain-link"></span>
@@ -37,10 +39,13 @@
 </div>
 <script>
     let count = 0;
-    let N = Math.floor(Math.random() * 20) + 1;
+    let N = Math.floor(Math.random() * 20) + 20;
     let isUnlocked = false;
+    let isOpened = false;
+    const NEXT_PAGE = "/stages/stage1_lobby.html";
     console.log(N);
-    function Click(){
+    function Click(event){
+        event.stopPropagation(); // 손잡이 클릭이 문 클릭으로 전달되지 않게
         if(isUnlocked){
             return;
         }
@@ -53,8 +58,15 @@
             document.querySelectorAll('.chain-wrap').forEach(function(chain) {
                 chain.classList.add('hidden');
             });
-
+            document.querySelector('.door').classList.add('unlocked');
         }
+    }
+
+    function OpenDoor(){
+        if(!isUnlocked || isOpened){
+            return;
+        }
+        window.location.href = NEXT_PAGE;
     }
 </script>
 </body>

@@ -17,14 +17,34 @@ body {
     border: 10px solid blue;
     width: 100px;
     height: 200px;
+    position: relative;
+    perspective: 600px;
+    background: #111; /* 문이 열렸을 때 보이는 안쪽 어둠 */
+}
+
+.door-panel {
+    position: absolute;
+    inset: 0;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    position: relative;
+    background: white;
+    transform-origin: left center; /* 왼쪽 경첩 기준으로 회전 */
+    transition: transform 1s ease-in-out;
 }
 
 .door.unlocked {
     cursor: pointer;
+}
+
+.door.unlocked:hover .door-panel {
+    transform: rotateY(-8deg); /* 살짝 열릴 것 같은 힌트 */
+}
+
+.door.opened .door-panel,
+.door.opened:hover .door-panel {
+    transform: rotateY(-100deg);
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .handle {
@@ -56,6 +76,7 @@ body {
     height: 35px;
     background-color: blue;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .circle.disabled {

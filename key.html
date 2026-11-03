@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="key.css">
+</head>
+<body>
+    <div class="Lever" onclick="PullLever()">
+        <div class="stick">
+            <div class="handle"></div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="key" onclick="TakeKey()">
+            <div class="key-head"></div>
+            <div class="key-shaft">
+                <div class="tooth1"></div>
+                <div class="tooth2"></div>
+            </div>
+        </div>
+        <div class="bars">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </div>
+<img src="/image/left_button.png" alt="" id="left_map">
+    <script>
+        let open = false;
+
+        function PullLever(){
+            open = true;
+            sessionStorage.setItem('leverOpen', '1');
+            document.querySelector('.Lever').classList.add('down');
+            document.querySelector('.box').classList.add('open');
+        }
+
+        if(sessionStorage.getItem('leverOpen') === '1'){
+            PullLever();
+        }
+        let key = sessionStorage.getItem('hasKey') === '1';
+        if(key){
+            document.querySelector('.key').style.display = 'none';
+        }
+
+        function TakeKey(){
+            if(!open){
+                alert("옆에 레버를 누르면 열릴거 같다...");
+                return;
+            }
+            key = true;
+            sessionStorage.setItem('hasKey', '1');
+            document.querySelector('.key').style.display = 'none';
+        }
+
+    left_map.addEventListener('click', () => {
+        window.location.href = open ? "/chain.html?unlocked=1" : "/chain.html";
+    })
+    </script>
+</body>
+</html>

@@ -41,7 +41,11 @@
       <span class="chain-link"></span>
     </div>
   </div>
+
 </div>
+  
+    <img src="/image/left_button.png" alt="" id="left_map">
+    <img src="/image/black_screen.png" alt="" id="fade" />
 <script>
     let count = 0;
     let N = Math.floor(Math.random() * 20) + 20;
@@ -73,6 +77,21 @@
         }
         window.location.href = NEXT_PAGE;
     }
+
+    const left_map = document.getElementById('left_map')
+
+const black = document.getElementById("fade")
+
+
+left_map.addEventListener('click', () => {
+  setTimeout(() => {
+    black.classList.add("fade-animation-in");
+  }, 200);
+    setTimeout(() => {
+    window.location.href = "/stages/road/road.html";
+    }, 600);
+})
+
 </script>
 </body>
 </html>

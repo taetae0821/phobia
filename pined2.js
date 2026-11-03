@@ -1,4 +1,16 @@
-let key = true; 
+const urlscan = window.location.href;
+
+let key = false;
+
+let unlocked = false;
+
+if(urlscan.includes("ul=1")){
+  unlocked = true;
+}
+
+if(urlscan.includes("key=1")){
+  key = true;
+}
 
 function Having(){
     if(key){
@@ -106,6 +118,20 @@ left_map.addEventListener('click', () => {
     black.classList.add("fade-animation-in");
   }, 200);
     setTimeout(() => {
-    window.location.href = "/stages/stage1_lobby.html"
+        if(unlocked==true&&key==true){
+            window.location.href = "/stages/stage1_lobby.html?unlocked=1&key=1"
+        }
+        else if(unlocked==true&&key==false){
+            window.location.href = "/stages/stage1_lobby.html?unlocked=1"
+        }
+        else if(unlocked==false&&key==true){
+            window.location.href = "/stages/stage1_lobby.html?key=1"
+        }
+        else if(unlocked==false&&key==false){
+            window.location.href = "/stages/stage1_lobby.html"
+        }
     }, 600);
 })
+
+
+       

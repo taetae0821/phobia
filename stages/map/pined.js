@@ -24,7 +24,18 @@ function closePanel() {
 
         $('.door').on('click', function() {
             if (!$(this).hasClass('unlocked')) return;
-            window.location.href = "../management_room/management_room.html";
+            const urlscan = window.location.href;
+
+            let key = false;
+
+            if(urlscan.includes("key=1")){
+            key = true;
+            }
+            if(key==true){
+                window.location.href = "../management_room/management_room.html?key=1";
+            }else{
+                window.location.href = "../management_room/management_room.html";
+            }
         });
 
         $('#numInput').on('change', function() {
@@ -93,8 +104,27 @@ function closePanel() {
     })(jQuery);
 
 
+const urlscan = window.location.href;
 
+let key = false;
+
+
+if(urlscan.includes("key=1")){
+  key = true;
+}
 
 left_map.addEventListener('click', () => {
-    window.location.href = open ? "/stages/stage1_lobby.html?unlocked=1" : "/stages/stage1_lobby.html";
+    let unlocked = open ? true : false;
+     if(unlocked==true&&key==true){
+            window.location.href = "/stages/stage1_lobby.html?unlocked=1&key=1"
+        }
+        else if(unlocked==true&&key==false){
+            window.location.href = "/stages/stage1_lobby.html?unlocked=1"
+        }
+        else if(unlocked==false&&key==true){
+            window.location.href = "/stages/stage1_lobby.html?key=1"
+        }
+        else if(unlocked==false&&key==false){
+            window.location.href = "/stages/stage1_lobby.html"
+        }
 })

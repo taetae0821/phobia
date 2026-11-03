@@ -24,12 +24,33 @@ document.addEventListener('click', ()=>{
     }
 })
 
+const urlscan = window.location.href;
+
+let key = false;
+
+let unlocked = true;
+
+if(urlscan.includes("key=1")){
+  key = true;
+}
+
 left_map.addEventListener('click', () => {
   setTimeout(() => {
     black.classList.add("fade-animation-in");
   }, 200);
     count++;
     setTimeout(() => {
-    window.location.href = "/stages/map/pined.html?unlocked=1"
+         if(unlocked==true&&key==true){
+            window.location.href = "/stages/map/pined.html?unlocked=1&key=1"
+        }
+        else if(unlocked==true&&key==false){
+            window.location.href = "/stages/map/pined.html?unlocked=1"
+        }
+        else if(unlocked==false&&key==true){
+            window.location.href = "/stages/map/pined.html?key=1"
+        }
+        else if(unlocked==false&&key==false){
+            window.location.href = "/stages/map/pined.html"
+        }
     }, 600);
 })

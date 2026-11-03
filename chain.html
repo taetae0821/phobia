@@ -58,13 +58,23 @@
         count++;
         console.log(count);
         if(count >= N){
-            isUnlocked = true;
-            document.querySelector('.circle').classList.add('disabled');
-            document.querySelectorAll('.chain-wrap').forEach(function(chain) {
-                chain.classList.add('hidden');
-            });
-            document.querySelector('.door').classList.add('unlocked');
+            sessionStorage.setItem('chainUnlocked', '1');
+            Unlock();
         }
+    }
+
+    function Unlock(){
+        isUnlocked = true;
+        document.querySelector('.circle').classList.add('disabled');
+        document.querySelectorAll('.chain-wrap').forEach(function(chain) {
+            chain.classList.add('hidden');
+        });
+        document.querySelector('.door').classList.add('unlocked');
+    }
+
+    // 한 번 풀린 체인은 다시 들어와도 풀린 상태 유지
+    if(sessionStorage.getItem('chainUnlocked') === '1'){
+        Unlock();
     }
 
     function OpenDoor(){

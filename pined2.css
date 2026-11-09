@@ -12,9 +12,6 @@
             align-items: center;
             position: relative;
         }
-        .container {
-            /* background-color : black; */
-        }
 
         .door {
             border: 10px solid blue;

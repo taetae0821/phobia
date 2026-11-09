@@ -116,3 +116,10 @@ floor.addEventListener('click',()=>{
         }
     }, 600);
 })
+
+  const follower = document.getElementById('light');
+
+    document.addEventListener('mousemove', (e) => {
+      follower.style.left = `${e.pageX-220}px`;
+      follower.style.top = `${e.pageY-220}px`;
+    });

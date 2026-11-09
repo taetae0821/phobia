@@ -1,6 +1,7 @@
 const left_map = document.getElementById("left_map");
 let open = false;
 
+            const back = document.getElementById("back");
 // export let open = false;
 
 function openPanel() {
@@ -19,6 +20,7 @@ function closePanel() {
         if (new URLSearchParams(location.search).get('unlocked') === '1') {
             document.querySelector(".lock").style.display = "none";
             $('.door').addClass('unlocked');
+            back.style.opacity = 0;
             open = true;
         }
 
@@ -49,7 +51,8 @@ function closePanel() {
             if (value === "0714") {
                 $(this).css({ color: 'green', 'border-color': 'green' });
                 document.querySelector(".lock").style.display = "none";
-                $('.door').addClass('unlocked');
+                $('.door').addClass('unlocked');            
+                back.style.opacity = 0;
                 open = true;
             } else {
                 $(this).css({ color: 'red', 'border-color': 'red' });
@@ -128,3 +131,10 @@ left_map.addEventListener('click', () => {
             window.location.href = "/stages/stage1_lobby.html"
         }
 })
+
+  const follower = document.getElementById('light');
+
+    document.addEventListener('mousemove', (e) => {
+      follower.style.left = `${e.pageX-220}px`;
+      follower.style.top = `${e.pageY-220}px`;
+    });

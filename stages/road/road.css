@@ -10,8 +10,9 @@ body {
 #left_map{
     position: absolute;
     top: 75%;
-    left: 40%;
+    left: 40.75%;
     scale: 40%;
+    opacity: 0;
 }
 
 #left_map:hover {
@@ -60,19 +61,29 @@ body {
 
 #cup{
     position: absolute;
-    top: 20%;
+    top: 35%;
     scale: 20%;
-    left: 10%;
+    left: 15%;
+    rotate: -10deg;
+    height:30%;
+    filter: brightness(0) invert(1);
+    opacity: 0;
 }
 
 #memo{
     position: absolute;
-    top: 50%;
-    left: 83%;
+    top: 58%;
+    left: 62.5%;
     scale: 40%;
+    width: 10%;
+    rotate: 90deg;
+    transform: skew(-10deg);
+    opacity: 0;
+    filter: brightness(0) invert(1);
 }
 #memo:hover,#cup:hover {
   cursor: pointer;
+  animation: hoverv 0.5s infinite alternate;
 }
 
 #cup_zoom,#memo_zoom{
@@ -113,10 +124,38 @@ body {
 #floor{
   position: absolute;
   scale: 30%;
-  top: 60%;
-  left: 40%;
+  top: 65%;
+  left: 15%;
+  filter: brightness(0) invert(1);
+  opacity: 0;
+  width: 70%;
+  height: 25%;
 }
 
 #floor:hover {
   cursor: pointer;
+  animation: hoverv 0.5s infinite alternate;
+}
+
+
+#back{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#light{
+  scale:140%;
+  opacity: 0.2;
+  pointer-events: none;
+  position: absolute;
+}
+
+@keyframes hoverv {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.2;
+  }
 }

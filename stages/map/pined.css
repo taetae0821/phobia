@@ -13,7 +13,7 @@
             position: relative;
         }
         .container {
-            background-color : black;
+            /* background-color : black; */
         }
 
         .door {
@@ -133,8 +133,9 @@
 #left_map{
     position: absolute;
     top: 75%;
-    left: 40%;
+    left: 40.75%;
     scale: 40%;
+    opacity: 0;
 }
 
 
@@ -162,7 +163,7 @@
     opacity: 0;
   }
 }
-asxz
+
 .fade-animation-in {
   animation: cut-fade-in 0.7s forwards;
 }
@@ -183,4 +184,26 @@ asxz
 
 #left_map:hover {
   cursor: pointer;
+}
+
+#back{
+  position: absolute;
+  top:0%;
+  z-index: -99;
+  width: 100%;
+  height: 100%;
+}
+#back_two{
+  position: absolute;
+  top:0%;
+  z-index: -99;
+  width: 100%;
+  height: 100%;
+}
+
+#light{
+  scale:140%;
+  opacity: 0.2;
+  pointer-events: none;
+  position: absolute;
 }

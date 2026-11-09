@@ -13,9 +13,12 @@ body{
 #table_test {
     position: absolute;
     scale: 75%;
-    transform: skew(-25deg);
-    margin-top: 17%;
-    rotate: 10deg;
+    transform: skewX(28deg) scaleX(-1);
+    margin-top: 36%;
+    margin-left: -3%;
+    rotate: -60deg;
+    opacity: 0;
+    filter:brightness(0) invert(1);
 }
 
 #map {
@@ -29,15 +32,15 @@ body{
 }
 
 #table_test:hover{
-    animation: zoom-in 0.2s forwards;
+    animation: zoom-in 1s infinite alternate;
 }
 
 @keyframes zoom-in {
     0%{
-        scale: 75%;
+        opacity: 0;
     }
     100%{
-        scale:80%
+        opacity: 0.2;
     }
 }
 
@@ -47,14 +50,14 @@ body{
 
 @keyframes upScale {
     0%{
-    transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-400%) translateY(-80%);
         opacity: 0;
         scale: 0;
     }
     100%{
-    transform: translateX(-30%) translateY(-30%);
+    transform: translateX(-60%) translateY(-60%);
         opacity: 1;
-        scale: 180%;
+        scale: 80%;
     }
 }
 
@@ -64,12 +67,12 @@ body{
 
 @keyframes downScale {
     0%{
-    transform: translateX(-30%) translateY(-30%);
+    transform: translateX(-60%) translateY(-60%);
         opacity: 1;
-        scale: 180%;
+        scale: 80%;
     }
     100%{
-    transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-400%) translateY(-80%);
         opacity: 0;
         scale: 0;
     }
@@ -78,8 +81,9 @@ body{
 #left_map{
     position: absolute;
     top: 75%;
-    left: 40%;
+    left: 40.75%;
     scale: 40%;
+    opacity: 0;
 }
 
 #fade {
@@ -126,4 +130,17 @@ body{
 
 #left_map:hover {
   cursor: pointer;
+}
+
+#back{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+}
+
+#light{
+  opacity: 0.2;
+  pointer-events: none;
+  position: absolute;
 }

@@ -10,7 +10,8 @@
     </style>
 </head>
 <body>
-
+<img src="/image/KakaoTalk_20261109_183025034_01.png" alt="" id="back_two">
+<img src="/image/KakaoTalk_20261109_183025034_02.png" alt="" id="back">
 <div class="container">
   <div class="door" onclick="OpenDoor()">
     <div class="door-panel">
@@ -41,6 +42,7 @@
       <span class="chain-link"></span>
     </div>
   </div>
+         <img src="/image/light.png" alt="" id="light">
   
         <img src="/image/left_button.png" alt="" id="left_map">
     <img src="/image/black_screen.png" alt="" id="fade" />
@@ -52,6 +54,7 @@
     let isOpened = false;
     const NEXT_PAGE = "/key.html";
     console.log(N);
+    const back = document.getElementById("back")
     function Click(event){
         event.stopPropagation(); // 손잡이 클릭이 문 클릭으로 전달되지 않게
         if(isUnlocked){
@@ -77,6 +80,7 @@
 
     // 한 번 풀린 체인은 다시 들어와도 풀린 상태 유지
     if(sessionStorage.getItem('chainUnlocked') === '1'){
+        back.style.opacity = 0;
         Unlock();
     }
 
@@ -136,6 +140,13 @@ left_map.addEventListener('click', () => {
         }
     }, 600);
 })
+
+  const follower = document.getElementById('light');
+
+    document.addEventListener('mousemove', (e) => {
+      follower.style.left = `${e.pageX-220}px`;
+      follower.style.top = `${e.pageY-220}px`;
+    });
 
 </script>
 </body>

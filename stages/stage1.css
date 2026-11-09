@@ -5,17 +5,28 @@ body {
   margin: 0;
 }
 
-#background {
-  position: absolute;
-  width: 100vw;
-  height: 100vw;
-}
-
 #stair {
   position: absolute;
-  scale: 75%;
+  scale: 45%;
   cursor: pointer;
+  transform: skewX(-15deg) translateY(43%) translateX(275%);
+  opacity: 0;
+  filter: brightness(0) invert(1);
 }
+
+#stair:hover {
+  animation: hoverv 1s infinite alternate;
+}
+
+@keyframes hoverv {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
 
 #fade {
   position: absolute;
@@ -60,16 +71,27 @@ body {
 #door {
   position: absolute;
   scale: 75%;
-  left:80%;
-  top: 30%;
+  left:75%;
+  top: 50%;
+  transform: skew(-25deg);
+  width : 8%;
   cursor: pointer;
+  filter: brightness(0) invert(1);
+  opacity: 0.03;
+}
+
+#door:hover {
+  animation: hoverv 1s infinite alternate;
 }
 
 #next_screen {
   position: absolute;
-  scale: 55%;
-  left:56%;
-  top: 25%;
+  scale: 35%;
+  left:63%;
+  opacity: 0.01;
+  top: 19%;
+  transform: skewY(45deg);
+  rotate: -85deg;
 }
 
 #next_screen:hover {
@@ -79,13 +101,13 @@ body {
 
 @keyframes hover {
   0% {
-    opacity: 0.4;
+    opacity: 0.;
   }
   50% {
-    opacity: 1;
+    opacity: 0.2;
   }
   100% {
-    opacity: 0.4;
+    opacity: 0.;
   }
 }
 
@@ -94,12 +116,30 @@ body {
 #outdoor{
     position: absolute;
     top: 93%;
-    left: 45%;
-    width: 10%;
-    height: 5%;
-    opacity: 1;
+    width: 100%;
+    height: 8%;
+    opacity: 0.01;
+    filter: brightness(0) invert(1);
+}
+#outdoor:hover {
+  cursor: pointer;
+  animation: hoverv 0.5s infinite alternate;
 }
 
 #left_map:hover {
   cursor: pointer;
+}
+
+
+#back{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#light{
+  scale:140%;
+  opacity: 0.2;
+  pointer-events: none;
+  position: absolute;
 }

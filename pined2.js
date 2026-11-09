@@ -11,11 +11,15 @@ if(urlscan.includes("ul=1")){
 if(urlscan.includes("key=1")){
   key = true;
 }
+const back = document.getElementById('back');
+const back_two = document.getElementById('back_two');
+const back_three = document.getElementById('back_three');
 
 function Having(){
     if(key){
         $('.image').hide();
         $('.lock').addClass('show');
+        back.style.opacity = 0;
     }else{
         alert("잠겨있는거 같다...");
     }
@@ -37,6 +41,7 @@ function closePanel() {
 
         if (new URLSearchParams(location.search).get('unlocked') === '1') {
             $('.door').addClass('unlocked');
+            back_two.style.opacity = 0;
             open = true;
         }
 
@@ -56,6 +61,7 @@ function closePanel() {
             if (value === "0714") {
                 $(this).css({ color: 'green', 'border-color': 'green' });
                 $('.door').addClass('unlocked');
+            back_two.style.opacity = 0;
                 open = true;
             } else {
                 $(this).css({ color: 'red', 'border-color': 'red' });
@@ -135,3 +141,9 @@ left_map.addEventListener('click', () => {
 
 
        
+  const follower = document.getElementById('light');
+
+    document.addEventListener('mousemove', (e) => {
+      follower.style.left = `${e.pageX-220}px`;
+      follower.style.top = `${e.pageY-220}px`;
+    });

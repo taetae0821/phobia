@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="key.css">
 </head>
 <body>
+
+    <img src="/image/KakaoTalk_20261109_191500000_02.png" id="back_three">
+    <img src="/image/KakaoTalk_20261109_191500000_01.png" id="back_two">
+    <img src="/image/KakaoTalk_20261109_191500000.png" id="back">
+
     <div class="Lever" onclick="PullLever()">
         <div class="stick">
             <div class="handle"></div>
@@ -26,15 +31,23 @@
             <div class="bar"></div>
         </div>
     </div>
+    
+         <img src="/image/light.png" alt="" id="light">
+  
 <img src="/image/left_button.png" alt="" id="left_map">
     <script>
         let open = false;
+
+        const one = document.getElementById("back")
+        const two = document.getElementById("back_two")
+        const three = document.getElementById("back_three")
 
         function PullLever(){
             open = true;
             sessionStorage.setItem('leverOpen', '1');
             document.querySelector('.Lever').classList.add('down');
             document.querySelector('.box').classList.add('open');
+            one.style.opacity = 0;
         }
 
         if(sessionStorage.getItem('leverOpen') === '1'){
@@ -43,6 +56,7 @@
         let key = sessionStorage.getItem('hasKey') === '1';
         if(key){
             document.querySelector('.key').style.display = 'none';
+            two.style.opacity = 0;
         }
 
         function TakeKey(){
@@ -53,32 +67,41 @@
             key = true;
             sessionStorage.setItem('hasKey', '1');
             document.querySelector('.key').style.display = 'none';
+            two.style.opacity = 0;
         }
 
     const urlscan = window.location.href;
 
-let unlocked = false;
+        let unlocked = false;
 
+        const left_map = document.getElementById("left_map");
 
-if(urlscan.includes("key=1")){
-  unlocked = true;
-}
+        if(urlscan.includes("key=1")){
+        unlocked = true;
+        }
 
-left_map.addEventListener('click', () => {
-    key = open ? true : false;
-     if(unlocked==true&&key==true){
-            window.location.href = "chain.html?unlocked=1&key=1"
-        }
-        else if(unlocked==true&&key==false){
-            window.location.href = "chain.html?unlocked=1"
-        }
-        else if(unlocked==false&&key==true){
-            window.location.href = "chain.html?key=1"
-        }
-        else if(unlocked==false&&key==false){
-            window.location.href = "chain.html"
-        }
-})
+        left_map.addEventListener('click', () => {
+            key = open ? true : false;
+            if(unlocked==true&&key==true){
+                    window.location.href = "chain.html?unlocked=1&key=1"
+                }
+                else if(unlocked==true&&key==false){
+                    window.location.href = "chain.html?unlocked=1"
+                }
+                else if(unlocked==false&&key==true){
+                    window.location.href = "chain.html?key=1"
+                }
+                else if(unlocked==false&&key==false){
+                    window.location.href = "chain.html"
+                }
+        })
+
+  const follower = document.getElementById('light');
+
+    document.addEventListener('mousemove', (e) => {
+      follower.style.left = `${e.pageX-220}px`;
+      follower.style.top = `${e.pageY-220}px`;
+    });
     </script>
 </body>
 </html>

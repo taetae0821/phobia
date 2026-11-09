@@ -16,30 +16,8 @@
   <div class="door" onclick="OpenDoor()">
     <div class="door-panel">
       <div class="handle">
-        <div class="circle" onclick="Click(event)"></div>
+        <div class="circle"></div>
       </div>
-    </div>
-    <div class="chain-wrap">
-      <span class="chain-link"></span>
-      <span class="chain-link"></span>
-      <span class="chain-link"></span>
-      <span class="chain-link"></span>
-      <span class="chain-link"></span>
-      <span class="chain-link"></span>
-      <span class="chain-link"></span>
-      <span class="chain-link"></span>
-      <span class="chain-link"></span>
-    </div>
-    <div class="chain-wrap chain-wrap-cross" >
-      <span class="chain-link"></span>
-      <span class="chain-link"></span>
-      <span class="chain-link"></span>
-      <span class="chain-link"></span>
-      <span class="chain-link"></span>
-      <span class="chain-link"></span>
-      <span class="chain-link"></span>
-      <span class="chain-link"></span>
-      <span class="chain-link"></span>
     </div>
   </div>
          <img src="/image/light.png" alt="" id="light">
@@ -55,8 +33,7 @@
     const NEXT_PAGE = "/key.html";
     console.log(N);
     const back = document.getElementById("back")
-    function Click(event){
-        event.stopPropagation(); // 손잡이 클릭이 문 클릭으로 전달되지 않게
+    function Click(){
         if(isUnlocked){
             return;
         }
@@ -72,20 +49,22 @@
     function Unlock(){
         isUnlocked = true;
         document.querySelector('.circle').classList.add('disabled');
-        document.querySelectorAll('.chain-wrap').forEach(function(chain) {
-            chain.classList.add('hidden');
-        });
+        back.style.opacity = 0; // 배경 사슬 이미지 숨김
         document.querySelector('.door').classList.add('unlocked');
     }
 
     // 한 번 풀린 체인은 다시 들어와도 풀린 상태 유지
     if(sessionStorage.getItem('chainUnlocked') === '1'){
-        back.style.opacity = 0;
         Unlock();
     }
 
     function OpenDoor(){
-        if(!isUnlocked || isOpened){
+        // 잠겨 있으면 문 어디를 눌러도 count 증가
+        if(!isUnlocked){
+            Click();
+            return;
+        }
+        if(isOpened){
             return;
         }
         const urlscan = window.location.href;

@@ -16,13 +16,16 @@
             /* background-color : black; */
         }
 
+        /* 문 히트박스: 배경 문 위치 */
         .door {
             border: 10px solid blue;
-            width: 100px;
-            height: 200px;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
+            box-sizing: border-box;
+            position: absolute;
+            left: 31.25vw;
+            top: 22.5vh;
+            width: 24.75vw;
+            height: 71.2vh;
+            opacity: 0;
         }
 
         .door.unlocked {
@@ -36,9 +39,13 @@
             align-items: center;
         }
 
+        /* 도어락 히트박스: 배경 도어락 위치 (.door 기준 %) */
         .lock {
-            width: 20px;
-            height: 20px;
+            position: absolute;
+            left: 74%;
+            top: 46%;
+            width: 14.5%;
+            height: 23%;
             background-color: blue;
             cursor: pointer;
         }

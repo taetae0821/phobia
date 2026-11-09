@@ -13,11 +13,17 @@ body {
     position: relative;
 }
 
+/* 문 히트박스: 배경 문 위치 */
 .door {
     border: 10px solid blue;
-    width: 100px;
-    height: 200px;
-    position: relative;
+    box-sizing: border-box;
+    position: absolute;
+    left: 39.1vw;
+    top: 42.5vh;
+    width: 20.4vw;
+    height: 55.8vh;
+    cursor: pointer;
+    opacity: 0;
     perspective: 600px;
     /* background: #111; 문이 열렸을 때 보이는 안쪽 어둠 */
 }

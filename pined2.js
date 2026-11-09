@@ -26,6 +26,21 @@ function Having(){
 }
 
 
+// 엔딩 크레딧 영상 전체화면 재생 (클릭 이벤트 안에서 호출해야 전체화면 허용됨)
+function playEnding() {
+    const video = document.getElementById('endingCredit');
+    video.classList.add('show');
+
+    const fs = video.requestFullscreen || video.webkitRequestFullscreen || video.msRequestFullscreen;
+    if (fs) {
+        const p = fs.call(video);
+        if (p && p.catch) p.catch(function() {}); // 전체화면 거부돼도 화면 꽉 채워서 재생
+    }
+
+    video.currentTime = 0;
+    video.play();
+}
+
 function openPanel() {
     document.getElementById('panel').classList.add('active');
     document.getElementById('blurOverlay').classList.add('active');
@@ -47,7 +62,7 @@ function closePanel() {
 
         $('.door').on('click', function() {
             if (!$(this).hasClass('unlocked')) return;
-            window.location.href = "../management_room/management_room.html";
+            playEnding();
         });
 
         $('#numInput').on('change', function() {

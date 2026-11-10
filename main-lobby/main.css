@@ -215,14 +215,14 @@ body {
 }
 @keyframes selected {
   0% {
-    transform: translateY(300px);
-    scale: 40%;
+    transform: translateY(30vh);
+    scale: 100%;
     opacity: 0;
   }
 
   100% {
     transform: translateY(0px);
-    scale: 40%;
+    scale: 100%;
     opacity: 1;
   }
 }

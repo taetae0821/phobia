@@ -116,7 +116,7 @@ btn_back.addEventListener("click", function () {
   poster.classList.remove("post-stay");
   poster.classList.add("post-out");
   setTimeout(() => {
-    rightImage.classList.add("back-right");
+    rightImage.classList.add("back-left");
   }, 100);
   setTimeout(() => {
     poster.classList.remove("post-out");
@@ -141,7 +141,7 @@ btn_back.addEventListener("click", function () {
 
   setTimeout(() => {
     btn.classList.remove("btn-out");
-    rightImage.classList.remove("back-right");
+    rightImage.classList.remove("back-left");
 
     rightImage.classList.add("stage-left");
     leftImage.classList.add("stage-right");

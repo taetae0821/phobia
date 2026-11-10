@@ -1,15 +1,32 @@
+/* 챕터 선택 화면 크기 기준: 이미지 한 장의 크기와 간격 */
+:root {
+  --stage-w: min(22vw, 36vh);
+  --stage-gap: 2vw;
+}
+
 #mainTag {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: calc(45vh + var(--stage-w) / 2 + 4vh);
+  margin: 0;
   text-align: center;
-  font-size: 400%;
+  font-size: clamp(32px, 4vw, 64px);
 }
 
 .stages {
   opacity: 0;
   display: flex;
-  margin-top: -40%;
-  margin-bottom: -10%;
-  margin-right: 40%;
+  position: fixed;
+  top: calc(45vh - var(--stage-w) / 2);
+  left: calc(50vw - var(--stage-w) * 1.5);
   scale: 0%;
+}
+
+.stages img {
+  display: block;
+  width: var(--stage-w);
+  height: var(--stage-w);
 }
 
 .stages-right {
@@ -21,11 +38,11 @@
 }
 
 .stage-left {
-  transform: translateX(-80px);
+  transform: translateX(calc(var(--stage-gap) * -1));
 }
 
 .stage-right {
-  transform: translateX(80px);
+  transform: translateX(var(--stage-gap));
 }
 
 #stage-1:hover {
@@ -42,19 +59,19 @@
 
 @keyframes right {
   0% {
-    transform: translateX(-300px);
+    transform: translateX(calc(var(--stage-w) * -0.75));
   }
   100% {
-    transform: translateX(-80px);
+    transform: translateX(calc(var(--stage-gap) * -1));
   }
 }
 
 @keyframes left {
   0% {
-    transform: translateX(300px);
+    transform: translateX(calc(var(--stage-w) * 0.75));
   }
   100% {
-    transform: translateX(80px);
+    transform: translateX(var(--stage-gap));
   }
 }
 

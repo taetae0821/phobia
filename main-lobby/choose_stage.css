@@ -12,7 +12,7 @@
     transform: translate(0%, 0%);
   }
   100% {
-    transform: translate(-80%, -40%);
+    transform: translate(calc(var(--stage-w) * 1.5 - 47vw), calc(var(--stage-w) / 2 - 39vh));
   }
 }
 @keyframes middles {
@@ -20,7 +20,7 @@
     transform: translate(0%, 0%);
   }
   100% {
-    transform: translate(-180%, -40%);
+    transform: translate(calc(var(--stage-w) * 0.5 - 47vw), calc(var(--stage-w) / 2 - 39vh));
   }
 }
 @keyframes rights {
@@ -28,7 +28,7 @@
     transform: translate(0%, 0%);
   }
   100% {
-    transform: translate(-280%, -40%);
+    transform: translate(calc(var(--stage-w) * -0.5 - 47vw), calc(var(--stage-w) / 2 - 39vh));
   }
 }
 
@@ -43,7 +43,7 @@
 }
 @keyframes lefts-back {
   0% {
-    transform: translate(-80%, -40%);
+    transform: translate(calc(var(--stage-w) * 1.5 - 47vw), calc(var(--stage-w) / 2 - 39vh));
   }
   100% {
     transform: translate(0%, 0%);
@@ -51,7 +51,7 @@
 }
 @keyframes middles-back {
   0% {
-    transform: translate(-180%, -40%);
+    transform: translate(calc(var(--stage-w) * 0.5 - 47vw), calc(var(--stage-w) / 2 - 39vh));
   }
   100% {
     transform: translate(0%, 0%);
@@ -59,7 +59,7 @@
 }
 @keyframes rights-back {
   0% {
-    transform: translate(-280%, -40%);
+    transform: translate(calc(var(--stage-w) * -0.5 - 47vw), calc(var(--stage-w) / 2 - 39vh));
   }
   100% {
     transform: translate(0%, 0%);
